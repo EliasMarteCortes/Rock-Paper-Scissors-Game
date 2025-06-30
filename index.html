@@ -66,14 +66,17 @@
                 }
             }
             
-            const humanSelection = getHumanChoice();
-            const compSelection = getComputerChoice();
 
-            console.log(`Computer: ${compSelection}`);
-            console.log(`Human: ${humanSelection}`);
+            for (let i = 1; i < 6; i++) {
+                console.log(`Round: ${i}`);
+                const humanSelection = getHumanChoice();
+                const compSelection = getComputerChoice();
+                console.log(`Computer choice: ${compSelection}`);
+                console.log(`Human choice: ${humanSelection}`);
+                console.log(playRound(humanSelection,compSelection));
+                console.log(`Computer score: ${computerScore} Human score: ${humanScore}`);
+            }
 
-            console.log(playRound(humanSelection,compSelection));
-            console.log(computerScore, humanScore)
         </script>
     </head>
     <body></body>
