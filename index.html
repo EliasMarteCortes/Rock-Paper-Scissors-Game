@@ -80,6 +80,10 @@
             const resultCont = document.querySelector("#results");
 
             const choiceP = document.createElement("p");
+            
+            const cpuScoreP = document.createElement("p");
+
+            const humanScoreP = document.createElement("p");
 
             resultCont.appendChild(choiceP);
 
@@ -88,13 +92,13 @@
 
                 switch(target.id) {
                     case("rock"):
-                        choiceP.textContent = "Rock";
+                        choiceP.textContent = playRound("rock", getComputerChoice());
                         break;
                     case("paper"):
-                        choiceP.textContent = "Paper";
+                        choiceP.textContent = playRound("paper", getComputerChoice());
                         break;
                     case("scissors"):
-                        choiceP.textContent = "Scissors";
+                        choiceP.textContent = playRound("scissors", getComputerChoice());
                         break;
                 }
 
