@@ -87,60 +87,47 @@
 
             resultCont.append(choiceP, cpuScoreP, humanScoreP);
 
+            function updateScoreDisplay() {
+                cpuScoreP.textContent = `Computer Score: ${computerScore}`;
+                humanScoreP.textContent = `Human Score: ${humanScore}`;
+            }
+
+            function resetScores() {
+                computerScore = 0;
+                humanScore = 0;
+            }
+
+            function checkWinner() {
+                if (computerScore >= 5){
+                    choiceP.textContent = "THE COMPUTER WON!"
+                    resetScores();
+                    return true;
+                }
+                else if (humanScore >= 5){
+                    choiceP.textContent = "YOU WON!"
+                    resetScores();
+                    return true;
+                }
+            }
+
             container.addEventListener("click",(e) => {
                 let target = e.target;
 
                 switch(target.id) {
                     case("rock"):
                         choiceP.textContent = playRound("rock", getComputerChoice());
-                        cpuScoreP.textContent = `Computer Score: ${computerScore}`;
-                        humanScoreP.textContent = `Human Score: ${humanScore}`;
-                        if (computerScore >= 5){
-                            choiceP.textContent = "THE COMPUTER WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
-                        else if (humanScore >= 5){
-                            choiceP.textContent = "YOU WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
+                        updateScoreDisplay();
+                        checkWinner();
                         break;
                     case("paper"):
                         choiceP.textContent = playRound("paper", getComputerChoice());
-                        cpuScoreP.textContent = `Computer Score: ${computerScore}`;
-                        humanScoreP.textContent = `Human Score: ${humanScore}`;
-                        if (computerScore >= 5){
-                            choiceP.textContent = "THE COMPUTER WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
-                        else if (humanScore >= 5){
-                            choiceP.textContent = "YOU WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
+                        updateScoreDisplay();
+                        checkWinner();
                         break;
                     case("scissors"):
                         choiceP.textContent = playRound("scissors", getComputerChoice());
-                        cpuScoreP.textContent = `Computer Score: ${computerScore}`;
-                        humanScoreP.textContent = `Human Score: ${humanScore}`;
-                        if (computerScore >= 5){
-                            choiceP.textContent = "THE COMPUTER WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
-                        else if (humanScore >= 5){
-                            choiceP.textContent = "YOU WON!"
-                            computerScore = 0;
-                            humanScore = 0
-                            break;
-                        }
+                        updateScoreDisplay();
+                        checkWinner();
                         break;
                 }
 
