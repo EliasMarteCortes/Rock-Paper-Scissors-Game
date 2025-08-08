@@ -3,7 +3,15 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
-        <script>
+    </head>
+    <body>
+    <div id="container">
+        <div id="results"></div>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+            <script>
             let computerScore = 0;
             let humanScore = 0;
             function getComputerChoice() {
@@ -65,9 +73,7 @@
                     }
                 }
             }
-            
-
-            for (let i = 1; i < 6; i++) {
+/*             for (let i = 1; i < 6; i++) {
                 console.log(`Round: ${i}`);
                 const humanSelection = getHumanChoice();
                 const compSelection = getComputerChoice();
@@ -76,8 +82,7 @@
                 console.log(playRound(humanSelection,compSelection));
                 console.log(`Computer score: ${computerScore} Human score: ${humanScore}`);
             }
-
+ */
         </script>
-    </head>
-    <body></body>
+    </body>
 </html>
