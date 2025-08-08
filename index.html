@@ -21,6 +21,7 @@
                 
                 return compChoice;
             }
+
             function getHumanChoice() {
                 let humanChoice = parseInt(prompt("Please type a number to select:\n 1: Rock 2: Paper 3: Scissors"));
                 switch (humanChoice) {
@@ -73,6 +74,33 @@
                     }
                 }
             }
+
+            const container = document.querySelector("#container");
+
+            const resultCont = document.querySelector("#results");
+
+            const choiceP = document.createElement("p");
+
+            resultCont.appendChild(choiceP);
+
+            container.addEventListener("click",(e) => {
+                let target = e.target;
+
+                switch(target.id) {
+                    case("rock"):
+                        choiceP.textContent = "Rock";
+                        break;
+                    case("paper"):
+                        choiceP.textContent = "Paper";
+                        break;
+                    case("scissors"):
+                        choiceP.textContent = "Scissors";
+                        break;
+                }
+
+
+            })
+
 /*             for (let i = 1; i < 6; i++) {
                 console.log(`Round: ${i}`);
                 const humanSelection = getHumanChoice();
